@@ -1,6 +1,6 @@
 import qs from 'query-string'
 
-export const DOMAIN = 'http://localhost:3001/'
+export const DOMAIN = 'http://localhost:3001'
 
 class ApiCall {
   constructor(domain) {
@@ -36,7 +36,7 @@ class ApiCall {
   }
 
   async delete(path) {
-    return await this.perform(path, payload, {
+    return await this.perform(path, null, {
       method: 'DELETE',
     })
   }
