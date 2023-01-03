@@ -1,12 +1,12 @@
 import { observer } from 'mobx-react-lite'
-import useStore from './hooks/useStore'
+import Dashboard from './components/Dashboard'
 
 function App() {
-  const { users, boards } = useStore()
-
-  console.log(boards.active?.sections[0]?.toJSON())
-
-  return <div>Start</div>
+  return (
+    <main>
+      <Dashboard />
+    </main>
+  )
 }
 
 export default observer(App)
