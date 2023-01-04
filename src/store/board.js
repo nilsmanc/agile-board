@@ -38,9 +38,14 @@ const Board = types.model('Board', {
 
 const BoardStore = types
   .model('UsersStore', {
-    boards: types.array(Board),
+    boards: types.optional(types.array(Board), []),
     active: types.safeReference(Board),
   })
+  .views((self) => ({
+    get list() {
+      return self.boards.map(({ id, title }) => ({ id, title }))
+    },
+  }))
   .actions((self) => {
     return {
       load: flow(function* () {
