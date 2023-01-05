@@ -10,9 +10,10 @@ import {
 } from '@mui/material'
 import { observer } from 'mobx-react-lite'
 import useStore from '../../hooks/useStore'
+import User from '../common/User'
 
 function Header() {
-  const { boards } = useStore()
+  const { boards, users } = useStore()
 
   return (
     <AppBar position='static'>
@@ -40,7 +41,9 @@ function Header() {
               </FormControl>
             </Box>
           </Grid>
-          <Grid item></Grid>
+          <Grid item>
+            <User user={users?.me} />
+          </Grid>
         </Grid>
       </Toolbar>
     </AppBar>
