@@ -25,16 +25,21 @@ function Header() {
               <FormControl variant='outlined'>
                 <Select
                   style={{ backgroundColor: '#fff', marginLeft: 10 }}
+                  native
                   value={boards?.active?.id || ''}
-                  onChange={() => {}}>
-                  <MenuItem value='' disabled>
+                  onChange={(event) => {
+                    const { value } = event.target
+
+                    boards.selectBoard(value)
+                  }}>
+                  <option value='' disabled>
                     -
-                  </MenuItem>
+                  </option>
                   {boards.list.map((b) => {
                     return (
-                      <MenuItem key={b.id} value={b?.id}>
+                      <option key={b.id} value={b?.id}>
                         {b?.title}
-                      </MenuItem>
+                      </option>
                     )
                   })}
                 </Select>
