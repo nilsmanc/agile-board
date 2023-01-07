@@ -1,4 +1,5 @@
-import { types, flow } from 'mobx-state-tree'
+import { flow, types } from 'mobx-state-tree'
+
 import apiCall from '../api'
 
 export const User = types.model('User', {
@@ -8,12 +9,12 @@ export const User = types.model('User', {
   avatar: types.string,
 })
 
-const ActiveUser = User.named('ActiveUser')
+export const UserMe = User.named('UserMe')
 
 const UsersStore = types
   .model('UsersStore', {
     users: types.maybe(types.array(User)),
-    me: types.maybe(ActiveUser),
+    me: types.maybe(UserMe),
   })
   .actions((self) => {
     return {

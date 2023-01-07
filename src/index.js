@@ -1,9 +1,10 @@
 import React from 'react'
+import { createContext } from 'react'
 import ReactDOM from 'react-dom/client'
+import { CssBaseline } from '@mui/material'
+
 import App from './App'
 import RootStore from './store'
-import { createContext } from 'react'
-import { CssBaseline } from '@mui/material'
 
 const store = RootStore.create({})
 
