@@ -69,7 +69,7 @@ export default function NewTaskDialog({ open, sectionId, handleClose }) {
           </Box>
           <Box p={1}>
             <FormControl fullWidth>
-              <InputLabel shrink>Assignee</InputLabel>
+              <InputLabel size='normal'>Assignee</InputLabel>
               <Select
                 required
                 style={{
@@ -79,9 +79,7 @@ export default function NewTaskDialog({ open, sectionId, handleClose }) {
                 name='assignee'
                 value={taskState?.assignee || ''}
                 onChange={updateTaskState}>
-                <option value={''} disabled>
-                  –
-                </option>
+                <option value={''} disabled></option>
                 {users?.users?.map((user) => {
                   return (
                     <option key={user.id} value={user.id}>

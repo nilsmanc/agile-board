@@ -35,6 +35,8 @@ const BoardSection = types
         const { id: boardID } = getParent(self, 2)
         const { id: status } = self
 
+        console.log('update', boardID, status, tasks)
+
         yield apiCall.put(`boards/${boardID}/tasks/${status}`, { tasks })
       }),
       addTask(taskPayload) {

@@ -1,6 +1,6 @@
 import qs from 'query-string'
 
-export const ENDPOINT = '//localhost:3001/'
+export const ENDPOINT = process.env.REACT_APP_API_URL
 
 class ApiCall {
   constructor(domain) {
@@ -12,6 +12,7 @@ class ApiCall {
       ...config,
       body: JSON.stringify(data),
       headers: {
+        'Access-Control-Allow-Origin': '*',
         'Content-Type': 'application/json',
       },
     })
@@ -20,7 +21,7 @@ class ApiCall {
   }
 
   async get(path, searchParams) {
-    return await this.perform(`${path}?${qs.stringify(searchParams)}`)
+    return await this.perform(`${path}${qs.stringify(searchParams)}`)
   }
 
   async post(path, payload) {
