@@ -1,6 +1,6 @@
 ## Technologies
 
-React, MobX, React-Beautiful-DnD, Material-UI
+React, Typescript, MobX, React-Beautiful-DnD, Material-UI
 
 ![first](/public/readme/main.png)
 

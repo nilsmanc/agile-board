@@ -14,8 +14,14 @@ import {
 
 import useStore from '../../hooks/useStore'
 
+type TaskState = {
+  title: string
+  description: string
+  assignee: string
+}
+
 export default function NewTaskDialog({ open, sectionId, handleClose }) {
-  const [taskState, setTaskState] = useState()
+  const [taskState, setTaskState] = useState<TaskState>()
   const { users, boards } = useStore()
 
   const updateTaskState = (event) => {
@@ -63,6 +69,7 @@ export default function NewTaskDialog({ open, sectionId, handleClose }) {
               name='description'
               label='Description'
               onChange={updateTaskState}
+              //@ts-ignore
               rowsMax={Infinity}
               value={taskState?.description || ''}
             />
