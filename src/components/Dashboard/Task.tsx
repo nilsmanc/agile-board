@@ -1,9 +1,14 @@
 import { CardContent, Typography } from '@mui/material'
 import { observer } from 'mobx-react-lite'
+import { TaskState } from '../../types'
 
 import User from '../common/User'
 
-function Task({ task }) {
+type TaskProps = {
+  task: TaskState
+}
+
+const Task: React.FC<TaskProps> = ({ task }) => {
   return (
     <CardContent>
       <Typography color='textPrimary' gutterBottom style={{ fontSize: 18 }}>

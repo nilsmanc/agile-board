@@ -7,7 +7,7 @@ import Column from './Column'
 import useStore from '../../hooks/useStore'
 import NewTaskDialog from './NewTaskDialog'
 
-const getListStyle = (isDraggingOver) => ({
+const getListStyle = (isDraggingOver: boolean) => ({
   background: isDraggingOver ? 'lightblue' : 'lightgrey',
   padding: 8,
   minHeight: 500,

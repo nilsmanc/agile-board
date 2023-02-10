@@ -13,12 +13,7 @@ import {
 } from '@mui/material'
 
 import useStore from '../../hooks/useStore'
-
-type TaskState = {
-  title: string
-  description: string
-  assignee: string
-}
+import { TaskState } from '../../types'
 
 export default function NewTaskDialog({ open, sectionId, handleClose }) {
   const [taskState, setTaskState] = useState<TaskState>()
