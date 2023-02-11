@@ -13,7 +13,13 @@ const getItemStyle = (isDragging: boolean, draggableStyle: {}) => {
   }
 }
 
-const Column = ({ section }) => {
+type ColumnProps = {
+  section: {
+    tasks: TaskState[]
+  }
+}
+
+const Column: React.FC<ColumnProps> = ({ section }) => {
   return (
     <div>
       {section.tasks.map((task: TaskState, index: number) => {

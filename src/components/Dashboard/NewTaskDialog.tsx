@@ -19,7 +19,7 @@ export default function NewTaskDialog({ open, sectionId, handleClose }) {
   const [taskState, setTaskState] = useState<TaskState>()
   const { users, boards } = useStore()
 
-  const updateTaskState = (event) => {
+  const updateTaskState = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, name } = event.target
 
     setTaskState((prevTaskState) => ({
