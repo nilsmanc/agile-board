@@ -68,7 +68,7 @@ const Board = types
         const taskToMoveIndex = fromSection.tasks.findIndex((task) => task.id === taskId)
         const [task] = fromSection.tasks.splice(taskToMoveIndex, 1)
 
-        toSection.tasks.splice(destination.index, 0, task.toJSON())
+        toSection.tasks.splice(destination.index, 0, JSON.parse(JSON.stringify(task)))
       },
     }
   })

@@ -22,7 +22,7 @@ class ApiCall {
     return await request.json()
   }
 
-  async get(path: string, searchParams: Record<string, any>) {
+  async get(path: string, searchParams?: Record<string, any>) {
     return await this.perform(`${path}${qs.stringify(searchParams)}`)
   }
 
